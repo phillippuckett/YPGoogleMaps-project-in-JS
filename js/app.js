@@ -1,0 +1,1 @@
+var zipHubProject = angular.module('zipHubProject', [])
