@@ -2,22 +2,24 @@
 <html lang="en" ng-app="zipHubProject">
 
 <head>
-    <!--Styles-->
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>zipHubProject</title>
 </head>
 
 <body ng-controller="mainCtrl">
 
-    <form action="">
+    <form>
         <input type="text" ng-model="name" placeholder="name">
         <input type="text" ng-model="location" placeholder="location">
-        <button ng-submit="">Search</button>
+        <button ng-click="getYpCtrl()">Search</button>
     </form>
 
-    <!--Contnt Deliv Netwrk-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js"></script>
+    <!--<div ng-model="data">
+
+    </div>-->
+
+    <!--Content Delivery Network-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 
     <!--Scripts-->
     <script src="js/app.js"></script>
