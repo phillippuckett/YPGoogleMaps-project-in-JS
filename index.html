@@ -14,9 +14,13 @@
         <button ng-click="getYpCtrl()">Search</button>
     </form>
 
-    <!--<div ng-model="data">
-
-    </div>-->
+    <div ng-repeat="listing in data.listings">
+        <div>{{listing.name}}</div>
+        <div>{{listing.address.street}}</div>
+        <div>{{listing.address.city}}</div>
+        <div>{{listing.address.prov}}</div>
+        <div>{{listing.address.pcode}}</div>
+    </div>
 
     <!--Content Delivery Network-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
