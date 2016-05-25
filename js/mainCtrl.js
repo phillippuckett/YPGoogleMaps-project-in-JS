@@ -3,8 +3,8 @@ angular.module('zipHubProject')
 
         console.log('CTRL');
         $scope.getYpCtrl = function () {
-            console.log('functioning');
-            mainSvc.getYpSvc($scope.name, $scope.location)
+            // console.log('getYpCtrl');
+            mainSvc.getYpSvc($scope.category, $scope.location)
                 .then(function (response) {
                     $scope.data = response;
                 })

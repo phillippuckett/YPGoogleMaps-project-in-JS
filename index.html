@@ -3,25 +3,32 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
     <title>zipHubProject</title>
 </head>
 
 <body ng-controller="mainCtrl">
 
-    <form>
-        <input type="text" ng-model="name" placeholder="name">
-        <input type="text" ng-model="location" placeholder="location">
-        <button ng-click="getYpCtrl()">Search</button>
-    </form>
-
-    <div ng-repeat="listing in data.listings">
-        <div>{{listing.name}}</div>
-        <div>{{listing.address.street}}</div>
-        <div>{{listing.address.city}}</div>
-        <div>{{listing.address.prov}}</div>
-        <div>{{listing.address.pcode}}</div>
+    <div class="searchBar">
+        <form>
+            <input type="text" ng-model="category" placeholder="cuisine">
+            <input type="text" ng-model="location" placeholder="location">
+            <button ng-click="getYpCtrl()" class="searchBtn">Search</button>
+        </form>
     </div>
 
+    <div class="bodyRow">
+        <div class="bodyCol">
+            <div ng-repeat="listing in data.listings" class="ngRpt">
+                <div class="ngRptName">{{listing.name}}</div>
+                <div class="ngRptLoc">{{listing.address.street}}, {{listing.address.city}} {{listing.address.prov}} {{listing.address.pcode}}</div>
+            </div>
+        </div>
+        <div class="bodyCol">
+            <div class="GPS"></div>
+            <div class="ad"></div>
+        </div>
+    </div>
     <!--Content Delivery Network-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 
