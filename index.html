@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="zipHubProject">
+<html lang="en" ng-app="zhp">
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <title>zipHubProject</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>zhp</title>
 </head>
 
 <body ng-controller="mainCtrl">
+    
+    <!--Directives-->
+    <main-dir></main-dir>
 
-    <div class="searchBar">
-        <form>
-            <input type="text" ng-model="category" placeholder="cuisine">
-            <input type="text" ng-model="location" placeholder="location">
-            <button ng-click="getYpCtrl()" class="searchBtn">Search</button>
-        </form>
-    </div>
-
-    <div class="bodyRow">
-        <div class="bodyCol">
-            <div ng-repeat="listing in data.listings" class="ngRpt">
-                <div class="ngRptName">{{listing.name}}</div>
-                <div class="ngRptLoc">{{listing.address.street}}, {{listing.address.city}} {{listing.address.prov}} {{listing.address.pcode}}</div>
-            </div>
-        </div>
-        <div class="bodyCol">
-            <div class="GPS"></div>
-            <div class="ad"></div>
-        </div>
-    </div>
     <!--Content Delivery Network-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 
     <!--Scripts-->
     <script src="js/app.js"></script>
-    <script src="js/mainCtrl.js"></script>
-    <script src="js/mainSvc.js"></script>
+    <script src="js/controllers/mainCtrl.js"></script>
+    
+    <script src="js/services/mainSvc.js"></script>
+    
+    <script src="js/directives/mainDir.js"></script>
+    <script src="js/directives/azDir.js"></script>
+    <script src="js/directives/mapDir.js"></script>
 
 </body>
 

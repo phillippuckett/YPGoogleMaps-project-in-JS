@@ -1,29 +1,20 @@
-# zipHubProject
-ZipHub.com, YellowAPI
+- Search Bar:
+    Categories: Cuisine 
+    Locations: Locations
 
-Simple web application that demonstrates how to link an API to a webpage
+- Search Btn:
+    Filtration Functions
 
-What are you looking for?
-	Restaurant Names
-	
-Locations:
-	Locations
+Other features:
 
-Categories:
-		Cuisine
+    - GPS Map:
 
-Search:
-    No to ENTER, Yes to Search button
+    - A-Z Index: Restaurant Names:
 
-Other:
-    Scroll div from most poplar to least, scrolling rightward
+    - 12 restaurant pagination:
 
-    A-Z for Restaurant Names
+    - More UIDs:
 
-    GPS + YellowAPI = Populated map
+    - Scroll div from most popular to least, scrolling rightward:
 
-    12 reataurants per page
-
-    More UIDs
-
-    Functions for the each cuisine
+    - Cuisine Functions:

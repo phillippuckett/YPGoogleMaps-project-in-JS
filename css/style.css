@@ -4,16 +4,17 @@ html {
 }
 
 .bodyRow {
-    border: 1px solid rgba(0,0,0,.5);  
+    border: 1px solid rgba(0,0,255,.5);  
     display: inline-flex;
     padding: 1.5vh 1.5vw;
     margin: auto;
 }
 
 .bodyCol {
-    border: 1px solid rgba(0,0,0,.5); 
+    border: 1px solid rgba(0,200,200,.5); 
     padding: 1.5vh 1.5vw; 
     margin: auto;
+    height: auto;
 }
 
 .GPS {

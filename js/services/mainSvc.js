@@ -1,4 +1,4 @@
-angular.module('zipHubProject')
+angular.module('zhp')
     .service('mainSvc', function ($http) {
 
         console.log('SVC');

@@ -1,0 +1,31 @@
+<div class="searchBar">
+    <form>
+        <input type="text" ng-model="category" placeholder="cuisine">
+        <input type="text" ng-model="location" placeholder="location">
+        <button ng-click="getYpCtrl()" class="searchBtn">Search</button>
+    </form>
+</div>
+
+<!--<az-dir></az-dir>-->
+
+<div ng-model="location" ng-controller="getYpCtrl()"> Searching all Food and Restaurants in {{$scope.listing.address.city}}, {{listing.address.prov}}</div>
+
+<div class="bodyRow">
+    <div class="bodyCol">
+        <div ng-repeat="listing in data.listings" class="ngRpt">
+            <div class="ngRptName">{{listing.name}}</div>
+            <div class="ngRptLoc">{{listing.address.street}}, {{listing.address.city}} {{listing.address.prov}} {{listing.address.pcode}}</div>
+        </div>
+    </div>
+
+
+    <div class="bodyCol">
+
+        <!--<map-dir></map-dir>-->
+
+        <div class="ad">
+            <!--repeating of add spaces-->
+        </div>
+
+    </div>
+</div>

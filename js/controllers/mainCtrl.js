@@ -1,4 +1,4 @@
-angular.module('zipHubProject')
+angular.module('zhp')
     .controller('mainCtrl', function ($scope, $http, mainSvc) {
 
         console.log('CTRL');
