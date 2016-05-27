@@ -26,12 +26,6 @@ angular.module('zhp')
 
         $scope.azFilter();
 
-        // $scope.letterCompare = function () {
-        //     for (var i = 0; i < $scope.letterArray.length; i++) {
-        //         if (letterArray[i].indexOf(letter) === 0)     
-        //     }       
-        // };
-
         $scope.filterLetter = function (letter) {
             var filteredLetter = letter;
             console.log('filter working');

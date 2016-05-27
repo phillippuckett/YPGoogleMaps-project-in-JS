@@ -61,7 +61,7 @@
         </div>
 
         <div class="main5">
-            <div class="main125" ng-repeat="listing in data.listings | filter: filters.letter">
+            <div class="main125" ng-repeat="listing in data.listings | filter:{ 'name':filters.letter }">
                 <div>{{listing.name}}</div>
                 <div>{{listing.address.street}}, {{listing.address.city}} {{listing.address.prov}} {{listing.address.pcode}}</div>
             </div>
