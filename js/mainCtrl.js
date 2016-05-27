@@ -4,12 +4,15 @@ angular.module('zhp')
         $scope.getYpCtrl = function () {
             console.log('getYpCtrl');
 
+            // API DOWNLOAD //            
+
             // SEARCH // (categories, locations)
             mainSvc.getYpSvc($scope.category, $scope.location)
                 .then(function (response) {
                     $scope.data = response;
                 })
         };
+            $scope.getYpCtrl();
 
         // POPULAR CUISINES // (mostPopular to leastPopular filter)
 
