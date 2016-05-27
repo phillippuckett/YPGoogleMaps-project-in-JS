@@ -7,9 +7,10 @@
 
 Other features:
 
-    - GPS Map:
+    - GPS Map
 
-    - A-Z Index: Restaurant Names:
+    + A-Z Index: Restaurant Names
+        - Connect to API
 
     - 12 restaurant pagination:
 
