@@ -2,78 +2,28 @@
 <html lang="en" ng-app="zhp">
 
 <head>
+
     <meta charset="UTF-8">
+    <title>ZHP</title>
+
+    <!--STYLE(S)-->
     <link rel="stylesheet" href="css/style.css">
-    <title>zhp</title>
+
 </head>
 
-<script>
-    var active = function () {
-        var searchBar = document.getElementByID('searchBar');
-        if (searchBar.value === '...') {
-            searchBar.value = '';
-            searchBar.placeholder = '...';
-        }
-    }
-    
-        var inactive = function () {
-        var searchBar = document.getElementByID('searchBar');
-        if (searchBar.value === '') {
-            searchBar.value = '...';
-            searchBar.placeholder = '';
-        }
-    }
-</script>
+<body>
 
-<div class="searchBar">
-    <form method="post">
-        <input id="searchBar" value="..." type="text" ng-model="category" placeholder="cuisine" onmousedown="active();" onblur="inactive();" maxlength="15" autocomplete="off">
-        <input id="searchBar" value="..." type="text" ng-model="location" placeholder="location" onmousedown="" onblur="" maxlength="15" autocomplete="off">
-        <button ng-click="getYpCtrl()" class="searchBtn">GO</button>
-    </form>
-</div>
+    <!--DIRECTIVE(S)-->
+    <main-dir></main-dir>
 
-<body ng-controller="mainCtrl">
-    
-    <div class="bodyRow">
-        <script>
-            var btns = "";
-        var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        var letterArray = letters.split('');
-        for (var i = 0; i < letters.length; i++) {
-            var letter = letterArray.shift();
-            btns += '<button onclick="alert(\'' + letter + '\');">' + letter + '<button>'; 
-        }
-        </script>
-
-        <script>
-            document.write(btns);
-        </script>
-    </div>
-    
-    <div ng-model="location" ng-controller="getYpCtrl()"> Searching all Food and Restaurants in {{}},{{}}</div>
-    <div class="bodyRow">
-        <div class="bodyCol">
-            <div ng-repeat="listing in data.listings" class="ngRpt">
-                <div class="ngRptName">{{listing.name}}</div>
-                <div class="ngRptLoc">{{listing.address.street}}, {{listing.address.city}} {{listing.address.prov}} {{listing.address.pcode}}</div>
-            </div>
-        </div>
-    </div>
-
-    <!--Content Delivery Network-->
+    <!--CONTENT DELIVERY NETWORK(S)-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <!--<script src="http://maps.googleapis.com/maps/api/js"></script>-->
 
-    <!--Scripts-->
+    <!--SCRIPT(S)-->
     <script src="js/app.js"></script>
-    <script src="js/controllers/mainCtrl.js"></script>
-
-    <script src="js/services/mainSvc.js"></script>
-
-    <script src="js/directives/mainDir.js"></script>
-    <script src="js/directives/azDir.js"></script>
-    <script src="js/directives/mapDir.js"></script>
+    <script src="js/mainCtrl.js"></script>
+    <script src="js/mainDir.js"></script>
+    <script src="js/mainSvc.js"></script>
 
 </body>
 

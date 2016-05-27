@@ -1,0 +1,67 @@
+<div class="main1" ng-controller="mainCtrl">
+
+    <!--TITLE-->
+    <div class="main5">
+        <h2>Discover Food and Restaurants</h2>
+        <h3>You Save - You Earn - We Give</h3>
+    </div>
+
+    <!--SEARCH-->
+    <div class="main5">
+        <div>
+            <form method="post">
+                <button class="search">OP</button>
+                <input class="input" id="searchBar" type="search" ng-model="category" placeholder="What are you looking for?" maxlength="15">
+                <input class="input" id="searchBar" type="search" ng-model="location" placeholder="location" maxlength="15">
+                <button class="search" ng-click="getYpCtrl()">GO</button>
+            </form>
+        </div>
+    </div>
+
+    <!--POPULAR CUISINES-->
+    <div class="main5">
+        <h2>Popular Food Choices</h2>
+        <div class="cuisine1">
+            <div class="cuisine5">Cuisine Type</div>
+            <div class="cuisine5">Cuisine Type</div>
+            <div class="cuisine5">Cuisine Type</div>
+            <div class="cuisine5">Cuisine Type</div>
+            <div class="cuisine5">Cuisine Type</div>
+            <div class="cuisine5">Cuisine Type</div>
+        </div>
+    </div>
+
+    <!--AZ INDEX-->
+    <div class="main5"> A - Z
+        <script>
+            var btns = "";
+        var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var letterArray = letters.split("");
+        for (var i = 0; i < letters.length; i++) {
+            var letter = letterArray.shift();
+            btns += '<button onclick="alert(\'' + letter + '\');">' + letter + '<button>'; 
+        }
+        <script>
+            document.write(btns);
+        </script>
+    </div>
+
+    <!--PAGINATION : SEARCH RESULTS-->
+    <div class="main5">
+        <h3>Searching all Food and Restaurants in {{listing.address.city}},{{listing.address.prov}}</h3>
+    </div>
+
+    <div class="main5">
+        <div class="main125" ng-repeat="listing in data.listings">
+            <div>{{listing.name}}</div>
+            <div>{{listing.address.street}}, {{listing.address.city}} {{listing.address.prov}} {{listing.address.pcode}}</div>
+        </div>
+    </div>
+
+    <!--GOOGLE MAPS DIRECTIVE-->
+
+    <!--CUISINE FUNCTIONS-->
+
+    <!--UIDs (maybe)-->
+    
+</div>

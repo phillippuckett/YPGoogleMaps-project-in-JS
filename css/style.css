@@ -1,65 +1,62 @@
 html {
-    border: 1px solid rgba(0,0,0,.25);  
+    color: rgba(255,255,255,.5);
+    border: 1px solid rgba(255,255,255,.25);
+    background-color: rgba(0,0,0,1);
     margin: auto;
 }
 
-.bodyRow {
-    border: 1px solid rgba(0,0,255,.5);  
-    display: inline-flex;
-    padding: 1.5vh 1.5vw;
-    margin: auto;
+body {
+    border: 1px solid rgba(255,255,255,.5);
+    margin: 1.25vh;
 }
 
-.bodyCol {
-    border: 1px solid rgba(0,200,200,.5); 
-    padding: 1.5vh 1.5vw; 
-    margin: auto;
-    height: auto;
+.main1 {
+    border: 1px solid rgba(255,0,0,.25);
+    margin: 1.25vh;
 }
-
-.GPS {
-    border: 1px solid rgba(0,255,0,.75);
-    background-color: rgba(0,255,0,.25);
-    margin: 2.5vh auto 2.5vh auto;
-    height: 25vw;
-    width: 50vh;
-}
-.ad {
+.main5 {
     border: 1px solid rgba(255,0,0,.5);
-    background-color: rgba(255,0,0,.125);
-    margin: 2.5vh auto 2.5vh auto;
-    height: 15vw;
-    width: 50vh;
+    margin: 1.25vh;   
+}
+.main25 {
+    border: 1px solid rgba(255,0,0,.75);
+    margin: 1.25vh;     
+}
+.main125 {
+    border: 1px solid rgba(255,0,0,1);
+    padding: 2.5vh;
+    margin: 2.5vh;     
 }
 
-.ngRpt {
-    border: 1px solid rgba(255,0,0,.5);  
-    background-color: rgba(255,0,0,.125);  
-    margin: 2.5vh auto 2.5vh auto;
-    height: 12.5vw;
-    width: 75vh;
+.cuisine1 {
+    border: 1px solid rgba(255,0,255,.25);
+    display: inline-flex;
+    overflow-x: auto;
+    max-width: 75vw;
+    margin: 1.25vh 12.5vh;  
+}
+.cuisine5 {
+    border: 1px solid rgba(255,0,255,.5);
+    background-color: rgba(255,0,255,.25);
+    height: 15vh;
+    min-width: 25vh;
+    padding: 2.5vh;
+    margin: 2.5vh;     
 }
 
-.ngRptName {
-    font-size: 2.5vh;
-    margin: 2.5vh 1.25vw;
-}
-.ngRptLoc {
-    color: rgba(0,0,0,.5);
-    font-size: 2.25vh;
-    margin: 2.5vh 1.25vw;
+.search {
+    border: 1px solid rgba(0,255,0,.5);
+    background-color: rgba(0,255,0,.25);   
+    margin: 1.25vh; 
+    height: 3.75vh;
+    width: 5vh;
 }
 
-.searchBar {
-    border: 1px solid rgba(0,255,0,.5);  
-    background-color: rgba(0,255,0,.125);  
-    padding: 1.5vh 1.5vw;
-    margin: 2.5vh auto 2.5vh auto;
-    width: 90vh;
-}
-
-.searchBtn {
-    border: 1px solid rgba(0,0,255,.5);  
-    background-color: rgba(0,0,255,.125);  
-    
+.input {
+    border: 1px solid rgba(0,0,255,.5);
+    background-color: rgba(0,0,255,.25);   
+    padding: 1.25vh; 
+    margin: 1.25vh; 
+    max-height: 5vh;
+    width: 25vw;
 }
