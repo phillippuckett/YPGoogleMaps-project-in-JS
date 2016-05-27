@@ -4,25 +4,45 @@ angular.module('zhp')
         $scope.getYpCtrl = function () {
             console.log('getYpCtrl');
 
-            // TITLE // (static)
-
             // SEARCH // (categories, locations)
             mainSvc.getYpSvc($scope.category, $scope.location)
                 .then(function (response) {
                     $scope.data = response;
                 })
-
-            // POPULAR CUISINES // (mostPopular tp leastPopular)
-
-            // AZ INDEX // (yellowApi)
-
-            // PAGINATION : SEARCH RESULTS // (12resultsPerPage, yellowApi)
-
-            // GOOGLE MAPS DIRECTIVE // (googleMapsApi, yellowApi)
-
-            // CUISINE FUNCTIONS //
-
-            // UIDs (maybe)//
         };
+
+        // POPULAR CUISINES // (mostPopular to leastPopular filter)
+
+        // AZ INDEX // (yellowApi)
+        $scope.azFilter = function () {
+            var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            $scope.letterArray = letters.split("");
+            for (var i = 0; i < $scope.letterArray.length; i++) {
+                $scope.letterArray[i] = { 'letter': $scope.letterArray[i] };
+            }
+            console.log($scope.letterArray);
+            $scope.filters = {};
+        };
+
+        $scope.azFilter();
+
+        // $scope.letterCompare = function () {
+        //     for (var i = 0; i < $scope.letterArray.length; i++) {
+        //         if (letterArray[i].indexOf(letter) === 0)     
+        //     }       
+        // };
+
+        $scope.filterLetter = function (letter) {
+            var filteredLetter = letter;
+            console.log('filter working');
+        };
+
+        // PAGINATION : SEARCH RESULTS // (12resultsPerPage, yellowApi)
+
+        // GOOGLE MAPS DIRECTIVE // (googleMapsApi, yellowApi)
+
+        // CUISINE FUNCTIONS //
+
+        // UIDs (maybe)//
 
     });

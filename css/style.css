@@ -1,7 +1,7 @@
 html {
-    color: rgba(255,255,255,.5);
     border: 1px solid rgba(255,255,255,.25);
-    background-color: rgba(0,0,0,1);
+    /*background-color: rgba(0,0,0,1);*/
+    /*color: rgba(255,255,255,.5);*/
     margin: auto;
 }
 
@@ -60,3 +60,8 @@ body {
     max-height: 5vh;
     width: 25vw;
 }
+
+.azButton {
+    display: inline-flex; 
+}
+
