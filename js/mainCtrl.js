@@ -1,4 +1,5 @@
-angular.module('zhp')
+// angular.module('zhp')
+angular.module('zhp', ['angularUtils.directives.dirPagination'])
     .controller('mainCtrl', function ($scope, $http, mainSvc) {
         console.log('RUNNING');
         $scope.getYpCtrl = function () {
