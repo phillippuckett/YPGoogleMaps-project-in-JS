@@ -71,7 +71,9 @@ ul.pagination {
     margin: 0;
 }
 
-ul.pagination li {display: inline;}
+ul.pagination li {
+    display: inline;
+}
 
 ul.pagination li a {
     color: black;
