@@ -1,4 +1,4 @@
-/**
+/** https://github.com/michaelbromley/angularUtils/tree/master/src/directives/pagination
  * dirPagination - AngularJS module for paginating (almost) anything.
  *
  *
