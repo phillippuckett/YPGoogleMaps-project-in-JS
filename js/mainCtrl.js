@@ -5,19 +5,17 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
         $scope.getYpCtrl = function () {
             console.log('getYpCtrl');
 
-            // API DOWNLOAD //            
-
-            // SEARCH // (categories, locations)
+            // SEARCH //
             mainSvc.getYpSvc($scope.category, $scope.location)
                 .then(function (response) {
                     $scope.data = response;
                 })
         };
-            $scope.getYpCtrl();
+        // $scope.getYpCtrl();
 
-        // POPULAR CUISINES // (mostPopular to leastPopular filter)
+        // POPULAR CUISINES //
 
-        // AZ INDEX // (yellowApi)
+        // AZ INDEX //
         $scope.azFilter = function () {
             var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             $scope.letterArray = letters.split("");
@@ -35,12 +33,6 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
             console.log('filter working');
         };
 
-        // PAGINATION : SEARCH RESULTS // (12resultsPerPage, yellowApi)
-
-        // GOOGLE MAPS DIRECTIVE // (googleMapsApi, yellowApi)
-
-        // CUISINE FUNCTIONS //
-
-        // UIDs (maybe)//
+        // GOOGLE MAPS DIRECTIVE //
 
     });

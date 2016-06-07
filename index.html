@@ -26,8 +26,9 @@
             <div>
                 <form method="post">
                     <button class="search">OP</button>
-                    <input class="input" id="searchBar" type="search" ng-model="category" placeholder="What are you looking for?" maxlength="15">
-                    <input class="input" id="searchBar" type="search" ng-model="location" placeholder="location" maxlength="15">
+                    <input class="input" id="searchBar" type="search" ng-model="listing.name" placeholder="Restaurant Name" maxlength="15">
+                    <input class="input" id="searchBar" type="search" ng-model="listing.address" placeholder="Zip Code" maxlength="15">
+                    <input class="input" id="searchBar" type="search" ng-model="listing" placeholder="Cuisine Type" maxlength="15">
                     <button class="search" ng-click="getYpCtrl()">GO</button>
                 </form>
             </div>
@@ -37,13 +38,17 @@
         <div class="main5">
             <h2>Popular Food Choices</h2>
             <div class="cuisine1">
-                <div class="cuisine5">Cuisine Type</div>
-                <div class="cuisine5">Cuisine Type</div>
-                <div class="cuisine5">Cuisine Type</div>
-                <div class="cuisine5">Cuisine Type</div>
-                <div class="cuisine5">Cuisine Type</div>
-                <div class="cuisine5">Cuisine Type</div>
+                <div class="cuisine5">Chinese</div>
+                <div class="cuisine5">Italian</div>
+                <div class="cuisine5">Sea Food</div>
+                <div class="cuisine5">American</div>
+                <div class="cuisine5">Mexican</div>
+                <div class="cuisine5">Indian</div>
             </div>
+        </div>
+
+        <div class="main5">
+            <h3>Searching all Food and Restaurants in Toronto{{listing.address.city}}, CA{{listing.address.prov}}</h3>
         </div>
 
         <!--AZ FILTER-->
@@ -55,21 +60,29 @@
             <button class="search">GO</button>
         </div>
 
-        <div class="main5">
-            <h3>Searching all Food and Restaurants in Las Vegas{{listing.address.city}}, NV{{listing.address.prov}}</h3>
-        </div>
-
-        <!--PAGINATION DATA-->
+        <!--PAGINATED DATA-->
         <dir-pagination-controls></dir-pagination-controls>
-        <div class="main5">
-            <div class="main125" dir-paginate="listing in data.listings | filter:{ 'name':filters.letter } | orderBy: sort | itemsPerPage: 12">
-                <div>{{listing.name}}</div>
-                <div>{{listing.address.street}}, {{listing.address.city}} {{listing.address.prov}} {{listing.address.pcode}}</div>
+        <br>
+        <div class="columnize">
+            <div class="main5">
+                <div class="main125" dir-paginate="listing in data.listings | filter:{ 'name':filters.letter } | orderBy: sort | itemsPerPage: 12">
+                    <div>{{listing.name}}</div>
+                    <div>{{listing.address.street}}, {{listing.address.city}} {{listing.address.prov}} {{listing.address.pcode}}</div>
+                </div>
+            </div>
+
+            <!--GOOGLE MAPS DIRECTIVE-->
+            <div class="main5">
+                <div id="map"></div>
+                <!--<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>-->
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRX-5_flPPGgoj1N8xePuy9nGbYhbz7hI&callback=initMap" async
+                    defer></script>
             </div>
         </div>
+        <br>
         <dir-pagination-controls></dir-pagination-controls>
 
-        <!--GOOGLE MAPS DIRECTIVE CUISINE FUNCTIONS (MVP) UIDS-->
+        <!--CUISINE FUNCTIONS (MVP) UIDS-->
 
     </div>
 
@@ -81,6 +94,7 @@
     <script src="js/mainCtrl.js"></script>
     <script src="js/mainSvc.js"></script>
     <script src="js/paginationDir.js"></script>
+    <script src="js/map.js"></script>
 
 </body>
 
