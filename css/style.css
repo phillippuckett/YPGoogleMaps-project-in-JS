@@ -1,29 +1,41 @@
 
 html {
-    border: 1px solid rgba(255,255,255,.25);
-    background-color: rgba(0,0,0,.125);
+    border: 1px solid rgba(255,255,255,.125);
+    background-color: rgba(225,225,225,.15);
     margin: auto;
 }
-
-body {
-    border: 1px solid rgba(255,255,255,.5);
+body { 
     margin: auto;
-}
-
-.main1 {
-    border: 1px solid rgba(255,0,0,.25);
-    margin: 1.25vh;
     width: 100%;
 }
-.main5 {
-    border: 1px solid rgba(255,0,0,.5);
-    margin: 1.25vh;   
-    width: 100%;
+.pageHeader {
+    /*border: 1px solid rgba(255,0,0,.5);*/
+    background-color: rgba(255,0,0,.25);
+    height: 35vh;
+    text-align: center;
+}
+.searchBar {
+    /*border: 1px solid rgba(255,0,0,.5);*/
+    background-color: rgba(100,200,0,1);
+    height: 8.75vh;
+    margin: 1.25vh auto;  
+    padding: 0 .5vw;
+}
+.input {
+    border: 1px solid rgba(255,255,255,.05);
+    border-radius: .75vh;
+    background-color: rgba(255,255,255,1);   
+    padding: 1.25vh; 
+    margin: 1.25vh .25vw; 
+    height: 6.25vh;
+    width: 30%;
+}
+.searchButton {
+    margin: auto;
 }
 .main25 {
-    border: 1px solid rgba(255,0,0,.75);
-    margin: 1.25vh;     
-    width: 100%;
+    /*border: 1px solid rgba(255,0,0,.75);*/
+    min-width: 15vw;
 }
 .main125 {
     border: 1px solid rgba(255,0,0,1);
@@ -32,11 +44,15 @@ body {
     width: 100%;
 }
 
+.template {
+    min-width: 45vw;
+    max-width: 35vw;
+}
 .cuisine1 {
-    border: 1px solid rgba(255,0,255,.25);
+    /*border: 1px solid rgba(255,0,255,.25);*/
     display: inline-flex;
     overflow-x: auto;
-    max-width: 75vw;
+    width: 75%;
     margin: 1.25vh 12.5vh;  
 }
 .cuisine5 {
@@ -47,25 +63,10 @@ body {
     padding: 2.5vh;
     margin: 2.5vh;     
 }
-
-.search {
-    border: 1px solid rgba(0,255,0,.5);
-    background-color: rgba(0,255,0,.25);   
-    margin: 1.25vh; 
-    height: 3.75vh;
-    width: 5vh;
-}
-
-.input {
-    border: 1px solid rgba(0,0,255,.5);
-    background-color: rgba(0,0,255,.25);   
-    padding: 1.25vh; 
-    margin: 1.25vh; 
-    max-height: 5vh;
-    width: 25vw;
-}
-
 .azButton {
+    /*border: 1px solid rgba(0,0,0,1);*/
+    background-color: rgba(255,255,255,1);
+    padding: 1vh;
     display: inline-flex; 
 }
 
@@ -97,8 +98,29 @@ ul.pagination li a {
 
 .columnize {
     border: 1px solid black;
+    background-color: white;
     display: inline-flex;  
+    padding: auto 2.5vh;
     margin: auto;
     width: 100%;
+}
+
+.img {
+    border: 1px solid black;
+    height: 25vh;
+    width: 15vh;
+}
+
+h1 {
+    /*color: white;*/
+    text-align: center;
+}
+h2 {
+    /*color: white;*/
+    text-align: center;
+}
+h3 {
+    color: black;
+    text-align: center;
 }
 

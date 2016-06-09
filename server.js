@@ -17,9 +17,28 @@ app.get('/', function (req, res) {
 });
 
 app.post('/apiCall', function (req, res) {
-    console.log(req);
+    var location = req.body.location;
+    var searchTerm = req.body.searchTerm;
+    console.log(searchTerm, location);
 
-    request.get({ url: 'http://api2.yp.com/listings/v1/reviews?listingid=13519&format=json&key=hn2v15wbkv' }, function (error, response, body) {
+    request.get({
+        url: 'http://api2.yp.com/listings/v1/search?searchloc=' + location + '&term=' + searchTerm + '&radius=10&listingcount=50&format=JSON&key=7569ckbfxh',
+
+        /*
+        key
+        term
+        searchloc  
+        phonesearch=
+        listingcount
+        shorturl
+        format
+        pagenum
+        sort
+        radius
+          */
+
+        headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36" }
+    }, function (error, response, body) {
 
         if (error) {
             res.send("API error");

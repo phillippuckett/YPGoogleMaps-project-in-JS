@@ -11,32 +11,29 @@
 
 </head>
 
-<body>
+<body ng-controller="mainCtrl">
+    <div class="pageHeader"></div>
+    <div class="columnize">
+        <div class="main25"></div>
 
-    <div class="main1" ng-controller="mainCtrl">
+        <div class="main25">
 
-        <!--TITLE (MVP)-->
-        <div class="main5">
-            <h2>Discover Food and Restaurants</h2>
-            <h3>You Save - You Earn - We Give</h3>
-        </div>
+            <!--TITLE (MVP)-->
+            <h1>Discover Food and Restaurants</h1>
+            <h2>You Save - You Earn - We Give</h2>
 
-        <!--SEARCH (MVP)-->
-        <div class="main5">
-            <div>
+            <!--SEARCH (MVP)-->
+            <div class="searchBar">
                 <form method="post">
-                    <button class="search">OP</button>
-                    <input class="input" id="searchBar" type="search" ng-model="listing.name" placeholder="Restaurant Name" maxlength="15">
-                    <input class="input" id="searchBar" type="search" ng-model="listing.address" placeholder="Zip Code" maxlength="15">
-                    <input class="input" id="searchBar" type="search" ng-model="listing" placeholder="Cuisine Type" maxlength="15">
-                    <button class="search" ng-click="getYpCtrl()">GO</button>
+                    <input class="input" id="searchBar" type="search" ng-model="name" placeholder="searchTerm" maxlength="15">
+                    <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Location" maxlength="15">
+                    <input class="input" id="searchBar" type="search" ng-model="cuisine" placeholder="cuisine" maxlength="15">
+                    <button ng-click="getYpCtrl()"></button>
                 </form>
             </div>
-        </div>
 
-        <!--POPULAR CUISINES-->
-        <div class="main5">
-            <h2>Popular Food Choices</h2>
+            <!--POPULAR CUISINES-->
+            <h3>Popular Food Choices</h3>
             <div class="cuisine1">
                 <div class="cuisine5">Chinese</div>
                 <div class="cuisine5">Italian</div>
@@ -45,45 +42,47 @@
                 <div class="cuisine5">Mexican</div>
                 <div class="cuisine5">Indian</div>
             </div>
-        </div>
 
-        <div class="main5">
-            <h3>Searching all Food and Restaurants in Toronto{{listing.address.city}}, CA{{listing.address.prov}}</h3>
-        </div>
+            <h3>Searching all Food and Restaurants near {{listing.city}}, {{listing.state}}</h3>
 
-        <!--AZ FILTER-->
-        <div class="main5">
-            <button class="search">OP</button>
+            <!--AZ FILTER-->
+            
             <div class="azButton" ng-repeat="letter in letterArray">
                 <button ng-click="filters.letter = letter.letter">{{letter.letter}}</button>
             </div>
-            <button class="search">GO</button>
-        </div>
-
-        <!--PAGINATED DATA-->
-        <dir-pagination-controls></dir-pagination-controls>
-        <br>
-        <div class="columnize">
-            <div class="main5">
-                <div class="main125" dir-paginate="listing in data.listings | filter:{ 'name':filters.letter } | orderBy: sort | itemsPerPage: 12">
-                    <div>{{listing.name}}</div>
-                    <div>{{listing.address.street}}, {{listing.address.city}} {{listing.address.prov}} {{listing.address.pcode}}</div>
+            <br>
+            <!--PAGINATED DATA-->
+            <dir-pagination-controls></dir-pagination-controls>
+            <br>
+            <div class="columnize">
+                <div>
+                    <div dir-paginate="listing in data.searchResult.searchListings.searchListing | filter:{ 'name':filters.letter } | orderBy: sort | itemsPerPage: 12">
+                        <div class="columnize">
+                            <img class="img" src="" alt="/media/logo.png">
+                            <div class="template">
+                                <!--<div>{{listing.categories}}</div>-->
+                                <div>{{listing.businessName}}</div>
+                                <div>{{listing.phone}}</div>
+                                <div>{{listing.street}}, {{listing.city}} {{listing.state}} {{lsting.zip}}</div>
+                                <div>{{listing.averageRating}}</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
-            <!--GOOGLE MAPS DIRECTIVE-->
-            <div class="main5">
+                <!--GOOGLE MAPS DIRECTIVE-->
                 <div id="map"></div>
-                <!--<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>-->
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRX-5_flPPGgoj1N8xePuy9nGbYhbz7hI&callback=initMap" async
                     defer></script>
             </div>
+            <br>
+            <dir-pagination-controls></dir-pagination-controls>
+
+            <!--CUISINE FUNCTIONS (MVP) UIDS-->
+            <!--makea function in the controller that would call on cuisine types only and or them from most common to least-->
+
         </div>
-        <br>
-        <dir-pagination-controls></dir-pagination-controls>
-
-        <!--CUISINE FUNCTIONS (MVP) UIDS-->
-
+        <div class="main25"></div>
     </div>
 
     <!--CONTENT DELIVERY NETWORK(S)-->
