@@ -33,20 +33,24 @@ body {
 .searchButton {
     margin: auto;
 }
-.main25 {
+.spacing {
     /*border: 1px solid rgba(255,0,0,.75);*/
     min-width: 15vw;
 }
-.main125 {
-    border: 1px solid rgba(255,0,0,1);
-    padding: 2.5vh;
-    margin: 2.5vh;     
-    width: 100%;
-}
-
 .template {
+    /*border: 1px solid mediumvioletred;*/
+    /*background-color: rgba(0,0,0,.25);*/
+    display: inline-flex;  
+    padding: 2.5vh;
+    margin: auto;
     min-width: 45vw;
     max-width: 35vw;
+}
+.templateInfo { 
+    /*background-color: yellow;*/
+    background-color: white;
+    min-width: 25vw;
+    max-width: 25vw;
 }
 .cuisine1 {
     /*border: 1px solid rgba(255,0,255,.25);*/
@@ -87,8 +91,7 @@ ul.pagination li a {
     text-decoration: none;
 }
 
-#map {
-    
+#map {  
     border: 1px solid black;
     height: 45vh;
     width: 45vh;
@@ -97,7 +100,7 @@ ul.pagination li a {
 }
 
 .columnize {
-    border: 1px solid black;
+    /*border: 1px solid green;*/
     background-color: white;
     display: inline-flex;  
     padding: auto 2.5vh;
@@ -106,21 +109,12 @@ ul.pagination li a {
 }
 
 .img {
-    border: 1px solid black;
+    background: blue;
     height: 25vh;
-    width: 15vh;
+    width: 25vh;
 }
 
-h1 {
-    /*color: white;*/
-    text-align: center;
-}
-h2 {
-    /*color: white;*/
-    text-align: center;
-}
-h3 {
-    color: black;
-    text-align: center;
-}
+h1 {text-align: center;}
+h2 {text-align: center;}
+h3 {text-align: center;}
 

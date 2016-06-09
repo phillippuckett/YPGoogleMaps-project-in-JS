@@ -14,9 +14,9 @@
 <body ng-controller="mainCtrl">
     <div class="pageHeader"></div>
     <div class="columnize">
-        <div class="main25"></div>
+        <div class="spacing"></div>
 
-        <div class="main25">
+        <div class="spacing">
 
             <!--TITLE (MVP)-->
             <h1>Discover Food and Restaurants</h1>
@@ -43,7 +43,7 @@
                 <div class="cuisine5">Indian</div>
             </div>
 
-            <h3>Searching all Food and Restaurants near {{listing.city}}, {{listing.state}}</h3>
+            <h3 ng-show="cityState">Searching all Food and Restaurants near {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h3>
 
             <!--AZ FILTER-->
             
@@ -56,15 +56,15 @@
             <br>
             <div class="columnize">
                 <div>
-                    <div dir-paginate="listing in data.searchResult.searchListings.searchListing | filter:{ 'name':filters.letter } | orderBy: sort | itemsPerPage: 12">
-                        <div class="columnize">
+                    <div dir-paginate="listing in data.searchResult.searchListings.searchListing | filter:{ 'businessName':filters.letter } | orderBy: sort | itemsPerPage: 12">
+                        <div class="template">
                             <img class="img" src="" alt="/media/logo.png">
-                            <div class="template">
+                            <div class="templateInfo">
                                 <!--<div>{{listing.categories}}</div>-->
                                 <div>{{listing.businessName}}</div>
                                 <div>{{listing.phone}}</div>
                                 <div>{{listing.street}}, {{listing.city}} {{listing.state}} {{lsting.zip}}</div>
-                                <div>{{listing.averageRating}}</div>
+                                <div>Rating: {{listing.averageRating}} / 5</div>
                             </div>
                         </div>
                     </div>
@@ -82,7 +82,7 @@
             <!--makea function in the controller that would call on cuisine types only and or them from most common to least-->
 
         </div>
-        <div class="main25"></div>
+        <div class="spacing"></div>
     </div>
 
     <!--CONTENT DELIVERY NETWORK(S)-->

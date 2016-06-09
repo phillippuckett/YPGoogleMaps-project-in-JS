@@ -8,18 +8,12 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
                 .then(function (response) {
                     $scope.data = JSON.parse(response.body)
                     console.log($scope.data);
+                    
+                    if (response) {
+                        $scope.cityState = !$scope.cityState;
+                    }
                 })
         };
-
-        // POPULAR CUISINES //
-        // $scope.getCuisine = function () {
-        //     mainSvc.getYpSvc($scope.cuisine, $scope.name)
-        //         .then(function (response) {
-        //             $scope.data = JSON.parse(response.body)
-        //             console.log($scope.data);
-        //         })
-        // };
-        // $scope.getCuisine();
 
         // AZ INDEX //
         $scope.azFilter = function () {
