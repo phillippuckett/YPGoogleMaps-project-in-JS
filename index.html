@@ -25,32 +25,25 @@
             <!--SEARCH (MVP)-->
             <div class="searchBar">
                 <form method="post">
-                    <input class="input" id="searchBar" type="search" ng-model="name" placeholder="searchTerm" maxlength="15">
-                    <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Location" maxlength="15">
-                    <input class="input" id="searchBar" type="search" ng-model="cuisine" placeholder="cuisine" maxlength="15">
+                    <input class="input" id="searchBar" type="search" ng-model="name" placeholder="Restaurant" maxlength="15">
+                    <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Las Vegas" maxlength="15">
+                    <select class="input" id="searchBar" ng-options="listing for listing in categoryArray" ng-model="category" placeholder="Categories">
+                        {{category}}
+                    </select>
                     <button ng-click="getYpCtrl()"></button>
                 </form>
             </div>
 
-            <!--POPULAR CUISINES-->
-            <h3>Popular Food Choices</h3>
-            <div class="cuisine1">
-                <div class="cuisine5">Chinese</div>
-                <div class="cuisine5">Italian</div>
-                <div class="cuisine5">Sea Food</div>
-                <div class="cuisine5">American</div>
-                <div class="cuisine5">Mexican</div>
-                <div class="cuisine5">Indian</div>
-            </div>
+            <!--POPULAR CATEGORIES-->
+            <!--POPULAR CATEGORIES-->
+            <!--POPULAR CATEGORIES-->
 
             <h3 ng-show="cityState">Searching all Food and Restaurants near {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h3>
 
             <!--AZ FILTER-->
-            
-            <div class="azButton" ng-repeat="letter in letterArray">
-                <button ng-click="filters.letter = letter.letter">{{letter.letter}}</button>
-            </div>
-            <br>
+            <!--AZ FILTER <div class="azButton" ng-repeat="letter in letterArray"> <button ng-click="filters.letter = letter.letter">{{letter.letter}}</button></div>-->
+            <!--AZ FILTER-->
+
             <!--PAGINATED DATA-->
             <dir-pagination-controls></dir-pagination-controls>
             <br>
@@ -75,14 +68,11 @@
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRX-5_flPPGgoj1N8xePuy9nGbYhbz7hI&callback=initMap" async
                     defer></script>
             </div>
-            <br>
             <dir-pagination-controls></dir-pagination-controls>
-
-            <!--CUISINE FUNCTIONS (MVP) UIDS-->
-            <!--makea function in the controller that would call on cuisine types only and or them from most common to least-->
-
         </div>
+
         <div class="spacing"></div>
+
     </div>
 
     <!--CONTENT DELIVERY NETWORK(S)-->

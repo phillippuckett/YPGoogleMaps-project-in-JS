@@ -52,14 +52,14 @@ body {
     min-width: 25vw;
     max-width: 25vw;
 }
-.cuisine1 {
+.category1 {
     /*border: 1px solid rgba(255,0,255,.25);*/
     display: inline-flex;
     overflow-x: auto;
     width: 75%;
     margin: 1.25vh 12.5vh;  
 }
-.cuisine5 {
+.category5 {
     border: 1px solid rgba(255,0,255,.5);
     background-color: rgba(255,0,255,.25);
     height: 15vh;
@@ -92,11 +92,10 @@ ul.pagination li a {
 }
 
 #map {  
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     height: 45vh;
     width: 45vh;
     margin: auto;
-    float: right;
 }
 
 .columnize {

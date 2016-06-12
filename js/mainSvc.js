@@ -3,13 +3,9 @@ angular.module('zhp')
 
         console.log('mainSvc');
         
-        this.getYpSvc = function (name, location, cuisine) {
-            
-            console.log(name)
-            console.log(location)
-            console.log(cuisine)
-            
-            var searchTerm = name + " " + cuisine;
+        this.getYpSvc = function (name, location, category) {          
+            console.log(name, location, category);        
+            var searchTerm = name + " " + category;
             return $http({
                 method: 'POST',
                 url: '/apiCall',
