@@ -65,8 +65,7 @@
 
                 <!--GOOGLE MAPS DIRECTIVE-->
                 <div id="map"></div>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRX-5_flPPGgoj1N8xePuy9nGbYhbz7hI&callback=initMap" async
-                    defer></script>
+
             </div>
             <dir-pagination-controls></dir-pagination-controls>
         </div>
@@ -84,6 +83,8 @@
     <script src="js/mainSvc.js"></script>
     <script src="js/paginationDir.js"></script>
     <script src="js/map.js"></script>
+    <!--excluded initMap from the URL to call it within the mainCtrl and populate accordingly-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRX-5_flPPGgoj1N8xePuy9nGbYhbz7hI" async defer></script>
 
 </body>
 

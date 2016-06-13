@@ -1,10 +1,11 @@
 angular.module('zhp')
     .service('mainSvc', function ($http) {
-
         console.log('mainSvc');
-        
-        this.getYpSvc = function (name, location, category) {          
-            console.log(name, location, category);        
+
+        this.getYpSvc = function (name, location, category) {
+            // console.log(name, location, category);        
+
+            // Parsing Names and Food Categories
             var searchTerm = name + " " + category;
             return $http({
                 method: 'POST',
