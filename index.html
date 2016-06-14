@@ -41,7 +41,7 @@
             </div>
 
             <!--"SEARCH FOR" DIALOGUE-->
-            <h3 ng-show="cityState">Showing Food and Restaurants in {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h3>
+            <h3 ng-show="cityState">Showing locations in {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h3>
 
 
             <!--NG REPEAT--->
@@ -56,8 +56,8 @@
                                 <h5>{{listing.averageRating}} stars</h5>
                                 <!--<h5 style="float: right;">{{listing.categories}}</h5>-->
                                 <!--</div>-->
-                                <h6>{{listing.phone}}</h6>
-                                <h6 class="sub">{{listing.street}}, {{listing.city}} {{listing.state}} {{lsting.zip}}</h6>
+                                <h6> <img src="/media/phone_icon.png"style="display:inline-block;"> {{listing.phone}}</h6>
+                                <h6 class="sub"><img src="/media/location_icon.png" style="display:inline-block;"> {{listing.street}}, {{listing.city}} {{listing.state}} {{lsting.zip}}</h6>
                             </div>
                         </div>
                         <!--<span class="stars">4.8618164</span>-->
