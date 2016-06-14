@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>ZHP</title>
+    <title>Restaurants and Food</title>
 
     <!--STYLE(S)-->
     <link rel="stylesheet" href="css/style.css">
@@ -12,43 +12,41 @@
 </head>
 
 <body ng-controller="mainCtrl">
-    <div class="pageHeader"></div>
+
+    <!--PAGE IMAGE-->
+    <div class="pageImg"></div>
+
+    <!--OUTER WRAPPING-->
     <div class="columnize">
-        <div class="spacing"></div>
 
-        <div class="spacing">
+        <!--LEFT MARGIN-->
+        <div class="margin"></div>
 
-            <!--TITLE (MVP)-->
+        <!--CENTRAL MARGIN-->
+        <div class="centerSpace">
+
+            <!--PAGE TITLE-->
             <h1>Discover Food and Restaurants</h1>
             <h2>You Save - You Earn - We Give</h2>
 
-            <!--SEARCH (MVP)-->
-            <div class="searchBar">
+            <!--SEARCH MENU-->
+            <div class="searchMenu">
+                <img src="/media/menu_button.png" style="margin-right: 1vh;">
                 <form method="post">
                     <input class="input" id="searchBar" type="search" ng-model="name" placeholder="Restaurant" maxlength="15">
                     <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Las Vegas" maxlength="15">
-                    <select class="input" id="searchBar" ng-options="listing for listing in categoryArray" ng-model="category" placeholder="Categories">
-                        {{category}}
-                    </select>
-                    <button ng-click="getYpCtrl()"></button>
+                    <select class="input" id="searchBar" ng-options="listing for listing in categoryArray" ng-model="category" placeholder="Categories">{{category}}</select>
+                    <img src="/media/search_button.png" ng-click="getYpCtrl()" style="position: absolute; top:1.25vh; left:66.25vw;">
                 </form>
             </div>
 
-            <!--POPULAR CATEGORIES-->
-            <!--POPULAR CATEGORIES-->
-            <!--POPULAR CATEGORIES-->
+            <!--"SEARCH FOR" DIALOGUE-->
+            <h3 ng-show="cityState">All Food and Restaurants near {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h3>
 
-            <h3 ng-show="cityState">Searching all Food and Restaurants near {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h3>
 
-            <!--AZ FILTER-->
-            <!--AZ FILTER <div class="azButton" ng-repeat="letter in letterArray"> <button ng-click="filters.letter = letter.letter">{{letter.letter}}</button></div>-->
-            <!--AZ FILTER-->
-
-            <!--PAGINATED DATA-->
-            <dir-pagination-controls></dir-pagination-controls>
-            <br>
-            <div class="columnize">
-                <div>
+            <!--NG REPEAT--->
+            <div class="resultDisplay">           
+                <div class="results">
                     <div dir-paginate="listing in data.searchResult.searchListings.searchListing | filter:{ 'businessName':filters.letter } | orderBy: sort | itemsPerPage: 12">
                         <div class="template">
                             <img class="img" src="" alt="/media/logo.png">
@@ -60,17 +58,22 @@
                                 <div>Rating: {{listing.averageRating}} / 5</div>
                             </div>
                         </div>
+                        <!--<span class="stars">4.8618164</span>-->
+                        <!--<span class="stars">2.6545344</span>-->
+                        <!--<span class="stars">0.5355</span>-->
+                        <!--<span class="stars">8</span>-->
                     </div>
                 </div>
 
                 <!--GOOGLE MAPS DIRECTIVE-->
                 <div id="map"></div>
 
-            </div>
             <dir-pagination-controls></dir-pagination-controls>
+            </div>
         </div>
 
-        <div class="spacing"></div>
+        <!--RIGHT MARGIN-->
+        <div class="margin"></div>
 
     </div>
 
