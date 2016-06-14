@@ -4,21 +4,20 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
         console.log('mainCtrl');
 
         // ng-options drop menu for top food categories
-        $scope.categoryArray = ['Italian', 'American', 'Mexican','Japanese','Chinese','Thai'];
+        $scope.categoryArray = ['Italian', 'American', 'Mexican', 'Japanese', 'Chinese', 'Thai'];
 
         // input parameters for Restaurants Name and Location
         $scope.location = "Las Vegas";
         $scope.name = "Restaurant";
 
+        // A function that invokes upon loading the page, containing a default value
         $scope.defaultCategory = function () {
-            $scope.category = $scope.categoryArray[0];
-            console.log('Default is working');
+            $scope.category = $scope.categoryArray[1];
         };
         $scope.defaultCategory();
 
         // GET data from ypApi
         $scope.getYpCtrl = function () {
-            // console.log($scope.name, $scope.location, $scope.category);
             mainSvc.getYpSvc($scope.name, $scope.location, $scope.category)
                 .then(function (response) {
                     $scope.data = JSON.parse(response.body);
@@ -36,7 +35,7 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
                     }
                 })
         };
-        // $scope.getYpCtrl();
+        $scope.getYpCtrl();
 
         $scope.filterLetter = function (letter) {
             var filteredLetter = letter;

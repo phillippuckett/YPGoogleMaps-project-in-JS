@@ -45,30 +45,35 @@
 
 
             <!--NG REPEAT--->
-            <div class="resultDisplay">           
+            <div class="resultDisplay">
                 <div>
                     <div dir-paginate="listing in data.searchResult.searchListings.searchListing | filter:{ 'businessName':filters.letter } | orderBy: sort | itemsPerPage: 10">
                         <div class="template">
                             <img class="templateImg" src="{{listing.adImage}}">
                             <div class="templateInfo">
                                 <h4>{{listing.businessName}}</h4>
+                                <!--<div style="display: inline-flex;">-->
                                 <h5>{{listing.averageRating}} stars</h5>
+                                <!--<h5>{{listing.primaryCategory}}</h5>-->
+                                <!--</div>-->
                                 <h6> <img src="/media/phone_icon.png"style="display:inline-block;"> {{listing.phone}}</h6>
                                 <h6 class="sub"><img src="/media/location_icon.png" style="display:inline-block;"> {{listing.street}}, {{listing.city}} {{listing.state}} {{lsting.zip}}</h6>
                             </div>
                         </div>
-                        <!--<span class="stars">4.8618164</span>-->
-                        <!--<span class="stars">2.6545344</span>-->
-                        <!--<span class="stars">0.5355</span>-->
-                        <!--<span class="stars">8</span>-->
                     </div>
                 </div>
 
                 <!--GOOGLE MAPS DIRECTIVE-->
                 <div id="map"></div>
 
-            <dir-pagination-controls></dir-pagination-controls>
+                <dir-pagination-controls></dir-pagination-controls>
             </div>
+            
+            <!--STAR SPAN TO BE-->
+            <!--<span class="stars">4.8618164</span>-->
+            <!--<span class="stars">2.6545344</span>-->
+            <!--<span class="stars">0.5355</span>-->
+            <!--<span class="stars">8</span>-->
         </div>
 
         <!--RIGHT MARGIN-->
