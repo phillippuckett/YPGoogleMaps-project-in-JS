@@ -4,11 +4,12 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
         console.log('mainCtrl');
 
         // ng-options drop menu for top food categories
-        $scope.categoryArray = ['American', 'Chinese', 'Italian', 'Mexican', 'Seafood', 'Indian'];
+        $scope.categoryArray = ['American', 'German','Italian', 'Mexican', 'Seafood', 'Japanese', 'Korean', 'Chinese', 'Vietnamese', 'Thai', 'Indian', 'Persian'];
         
         // input parameters for Restaurants Name and Location
         $scope.location = "Las Vegas";
         $scope.name = "Restaurant";
+        $scope.category = $scope.categoryArray[1];
 
         // GET data from ypApi
         $scope.getYpCtrl = function () {

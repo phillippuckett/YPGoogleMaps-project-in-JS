@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="UTF-8">
-    <title>Restaurants and Food</title>
+    <title>Foods and Restaurants</title>
 
     <!--STYLE(S)-->
     <link rel="stylesheet" href="css/style.css">
@@ -26,7 +26,7 @@
         <div class="centerSpace">
 
             <!--PAGE TITLE-->
-            <h1>Discover Food and Restaurants</h1>
+            <h1>Discover Foods and Restaurants</h1>
             <h2>You Save - You Earn - We Give</h2>
 
             <!--SEARCH MENU-->
@@ -35,27 +35,29 @@
                 <form method="post">
                     <input class="input" id="searchBar" type="search" ng-model="name" placeholder="Restaurant" maxlength="15">
                     <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Las Vegas" maxlength="15">
-                    <select class="input" id="searchBar" ng-options="listing for listing in categoryArray" ng-model="category" placeholder="Categories">{{category}}</select>
+                    <select class="input" id="searchBar" ng-options="listing for listing in categoryArray" ng-model="category" placeholder="Categories">
+                        <!--{{category}}-->
+                        <option value="American"></option>
+                        </select>
                     <img src="/media/search_button.png" ng-click="getYpCtrl()" style="position: absolute; top:1.25vh; left:66.25vw;">
                 </form>
             </div>
 
             <!--"SEARCH FOR" DIALOGUE-->
-            <h3 ng-show="cityState">All Food and Restaurants near {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h3>
+            <h3 ng-show="cityState">Showing Food and Restaurants in {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h3>
 
 
             <!--NG REPEAT--->
             <div class="resultDisplay">           
-                <div class="results">
+                <div>
                     <div dir-paginate="listing in data.searchResult.searchListings.searchListing | filter:{ 'businessName':filters.letter } | orderBy: sort | itemsPerPage: 12">
                         <div class="template">
-                            <img class="img" src="" alt="/media/logo.png">
+                            <img class="templateImg" src="" alt="">
                             <div class="templateInfo">
-                                <!--<div>{{listing.categories}}</div>-->
-                                <div>{{listing.businessName}}</div>
-                                <div>{{listing.phone}}</div>
-                                <div>{{listing.street}}, {{listing.city}} {{listing.state}} {{lsting.zip}}</div>
-                                <div>Rating: {{listing.averageRating}} / 5</div>
+                                <h4>{{listing.businessName}}</h4>
+                                <h5>Rating: {{listing.averageRating}} / 5 ()</h5>
+                                <h6>{{listing.phone}}</h6>
+                                <h6 class="sub">{{listing.street}}, {{listing.city}} {{listing.state}} {{lsting.zip}}</h6>
                             </div>
                         </div>
                         <!--<span class="stars">4.8618164</span>-->
