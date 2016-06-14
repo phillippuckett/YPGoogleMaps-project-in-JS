@@ -111,8 +111,10 @@ box-shadow: 0px 1.25px 2.5px 1px rgba(0,0,0,.25);
 
 .templateImg{    
     border-radius: .75vh;
-    height: 15vh; 
-    width: 11.25vw;    
+    height: 15vh;
+    min-width: 100px; max-width: 100px;
+    background-size: cover;
+    background-image: url(/media/placement_logo2.png);  
 
 -webkit-box-shadow: 0px 3px 0px 0px rgba(64,175,5,1);
 -moz-box-shadow: 0px 3px 0px 0px rgba(64,175,5,1);
@@ -133,7 +135,6 @@ h4 {
     margin:0;
 }
 
-/*.columnizeTemplateInfo { display: inline-flex;}*/
 span.stars, span.stars span {
     display: block;
     background: url('/media/stars.png') 0 -16px repeat-x;
@@ -164,7 +165,6 @@ h6.sub {
 
 /* PAGINATION */
 ul.pagination {
-    /*border: 1px solid rgb(0,0,0);*/
     background-color: rgba(0,0,0,.075);
     padding: 2.5vh 1.25vw 0 1.25vw;
     margin: 7.5vh auto 12.5vh auto;
@@ -173,12 +173,12 @@ ul.pagination {
 }
 ul.pagination li { display: inline; }
 ul.pagination li a { 
-    border: 1px solid rgba(0,0,0,.25);
+    border-radius: .125vh;
     background-color: white;
     text-decoration: none; 
     text-align: right;
     font-size: 14px;
     color: black;
-    padding: .25vh .5vw; 
-    margin: 0 .25vw;
+    padding: .25vh .75vw; 
+    margin: 0 .5vw;
     }

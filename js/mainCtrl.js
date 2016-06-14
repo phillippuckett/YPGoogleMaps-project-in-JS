@@ -4,7 +4,7 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
         console.log('mainCtrl');
 
         // ng-options drop menu for top food categories
-        $scope.categoryArray = ['American', 'German', 'Italian', 'Mexican', 'Seafood', 'Japanese', 'Korean', 'Chinese', 'Vietnamese', 'Thai', 'Indian', 'Persian'];
+        $scope.categoryArray = ['Italian', 'American', 'Mexican','Japanese','Chinese','Thai'];
 
         // input parameters for Restaurants Name and Location
         $scope.location = "Las Vegas";
