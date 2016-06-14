@@ -4,12 +4,17 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
         console.log('mainCtrl');
 
         // ng-options drop menu for top food categories
-        $scope.categoryArray = ['American', 'German','Italian', 'Mexican', 'Seafood', 'Japanese', 'Korean', 'Chinese', 'Vietnamese', 'Thai', 'Indian', 'Persian'];
-        
+        $scope.categoryArray = ['American', 'German', 'Italian', 'Mexican', 'Seafood', 'Japanese', 'Korean', 'Chinese', 'Vietnamese', 'Thai', 'Indian', 'Persian'];
+
         // input parameters for Restaurants Name and Location
         $scope.location = "Las Vegas";
         $scope.name = "Restaurant";
-        $scope.category = $scope.categoryArray[1];
+
+        $scope.defaultCategory = function () {
+            $scope.category = $scope.categoryArray[0];
+            console.log('Default is working');
+        };
+        $scope.defaultCategory();
 
         // GET data from ypApi
         $scope.getYpCtrl = function () {
@@ -17,10 +22,10 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
             mainSvc.getYpSvc($scope.name, $scope.location, $scope.category)
                 .then(function (response) {
                     $scope.data = JSON.parse(response.body);
-                    
+
                     // to see what API data we are getting back
                     console.log($scope.data);
-                    
+
                     //set up data for googleMaps markers then call map
                     mapData = $scope.data.searchResult.searchListings.searchListing;
                     initMap();
@@ -28,8 +33,8 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
                     // "Searching all Food and Restaurants near city, st"
                     if (response) {
                         $scope.cityState = !$scope.cityState;
-                    }                  
-                })           
+                    }
+                })
         };
         // $scope.getYpCtrl();
 
@@ -37,7 +42,6 @@ angular.module('zhp', ['angularUtils.directives.dirPagination'])
             var filteredLetter = letter;
             console.log('filter working');
         };
-              
 
     });
 
