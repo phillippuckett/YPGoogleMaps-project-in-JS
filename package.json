@@ -1,13 +1,13 @@
 {
-  "name": "zhp",
+  "name": "sub-pages",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "dependencies": {
+    "angular-utils-pagination": "^0.11.1",
     "body-parser": "^1.15.1",
-    "express": "^4.13.4",
-    "request": "^2.72.0",
-    "angular-utils-pagination": "^0.11.1"
+    "express": "^4.14.0",
+    "request": "^2.72.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -16,12 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phillippuckett88/zipHubProject.git"
+    "url": "https://github.com/phillippuckett88/ziphubYp.git"
   },
-  "author": "",
+  "author": "https://github.com/phillippuckett88",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/phillippuckett88/zipHubProject/issues"
-  },
-  "homepage": "https://github.com/phillippuckett88/zipHubProject#readme"
+    "url": "https://github.com/phillippuckett88/ziphubYp/issues"
+  }
 }

@@ -1,0 +1,51 @@
+<img class="pageImg" src="media/b2b.png">
+<div class="page">
+
+    <!--PAGE TITLE-->
+    <h6 class="title">Discover Business to Business</h6>
+    <h6 class="subTitle">You Save, You Earn, We Give</h6>
+    <!--PAGE TITLE-->
+
+    <!--NAV-->
+    <div class="nav">
+        <img src="media/menu_button.png" style="margin-right:.8vh;">
+        <form method="post">
+            <input class="input" id="searchBar" type="search" ng-model="name" placeholder="Business" maxlength="15">
+            <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Location" maxlength="15">
+            <select class="input" id="searchBar" ng-options="listing for listing in categoryArray" ng-model="category" placeholder="Choose Practice"></select>
+            <img src="media/search_button.png" ng-click="getYpBusiCtrl()" style="position: relative; top:1.5vh; left:.75vw;">
+        </form>
+    </div>
+    <!--NAV-->
+
+    <!--RESULT-->
+    <h6 class="text">Showing locations in {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h6>
+    <div class="results">
+        <div>
+            <div ng-repeat="listing in data.searchResult.searchListings.searchListing | filter:{ 'businessName':filters.letter }">
+                <div class="template">
+                    <img class="templateImg" src="{{listing.adImage}}" alt="media/template_img.png">
+                    <div class="templateInfo">
+                        <h6 class="businessName" class="businessName">{{listing.businessName}}
+                            <a href="{{listing.websiteURL}}"><img src="media/odysseos_arrow.png"></a>
+                        </h6>
+                        <div class="span">
+                            <span class="stars" title="{value as listing.averageRating}" style="width={value/5*100}%;">{{listing.averageRating}}</span>
+                            <h6 class="ratingCount">( {{listing.ratingCount}} )</h6>
+                        </div>
+                        <h6 class="businessPhone"> <img src="media/phone_icon.png" style="display:inline-block;"> {{listing.phone}}</h6>
+                        <h6 class="businessAddress"><img src="media/location_icon.png" style="display:inline-block;"> {{listing.street}}, {{listing.city}}
+                            {{listing.state}} {{listing.zip}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--RESULT-->
+
+        <!--MAP-->
+        <div id="map"></div>
+        <h6 class="dealsCoupons">Business Ads</h6>
+        <!--MAP-->
+
+    </div>
+</div>

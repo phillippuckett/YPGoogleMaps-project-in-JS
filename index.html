@@ -1,97 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="zhp">
+<html lang="en" ng-app="sub">
 
 <head>
 
     <meta charset="UTF-8">
-    <title>Foods and Restaurants</title>
-
-    <!--STYLE(S)-->
-    <link rel="stylesheet" href="css/style.css">
+    <title>ZIPHUB-SUBPAGES</title>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body ng-controller="mainCtrl">
+    <!--UI-VIEW-->
+    <ui-view></ui-view>
+    <!--UI-VIEW-->
 
-    <!--PAGE IMAGE-->
-    <div class="pageImg"></div>
-
-    <!--OUTER WRAPPING-->
-    <div class="columnize">
-
-        <!--LEFT MARGIN-->
-        <div class="margin"></div>
-
-        <!--CENTRAL MARGIN-->
-        <div class="centerSpace">
-
-            <!--PAGE TITLE-->
-            <h1>Discover Foods and Restaurants</h1>
-            <h2>You Save, You Earn, We Give</h2>
-
-            <!--SEARCH MENU-->
-            <div class="searchMenu">
-                <img src="/media/menu_button.png" style="margin-right:.8vh;">
-                <form method="post">
-                    <input class="input" id="searchBar" type="search" ng-model="name" placeholder="Restaurant" maxlength="15">
-                    <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Location" maxlength="15">
-                    <select class="input" id="searchBar" ng-options="listing for listing in categoryArray" ng-model="category" placeholder="Cuisine"></select>
-                    <img src="/media/search_button.png" ng-click="getYpCtrl()" style="position: absolute; top:1.25vh; left:66.375vw;">
-                </form>
-            </div>
-
-            <!--"SEARCH FOR" DIALOGUE-->
-            <h3 ng-show="cityState">Showing locations in {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h3>
-
-
-            <!--NG REPEAT--->
-            <div class="resultDisplay">
-                <div>
-                    <div dir-paginate="listing in data.searchResult.searchListings.searchListing | filter:{ 'businessName':filters.letter } | orderBy: sort | itemsPerPage: 10">
-                        <div class="template">
-                            <img class="templateImg" src="{{listing.adImage}}">
-                            <div class="templateInfo">
-                                <h4>{{listing.businessName}}</h4>
-                                <!--<div style="display: inline-flex;">-->
-                                <h5>{{listing.averageRating}} stars</h5>
-                                <!--<h5>{{listing.primaryCategory}}</h5>-->
-                                <!--</div>-->
-                                <h6> <img src="/media/phone_icon.png"style="display:inline-block;"> {{listing.phone}}</h6>
-                                <h6 class="sub"><img src="/media/location_icon.png" style="display:inline-block;"> {{listing.street}}, {{listing.city}} {{listing.state}} {{lsting.zip}}</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--GOOGLE MAPS DIRECTIVE-->
-                <div id="map"></div>
-
-                <dir-pagination-controls></dir-pagination-controls>
-            </div>
-            
-            <!--STAR SPAN TO BE-->
-            <!--<span class="stars">4.8618164</span>-->
-            <!--<span class="stars">2.6545344</span>-->
-            <!--<span class="stars">0.5355</span>-->
-            <!--<span class="stars">8</span>-->
-        </div>
-
-        <!--RIGHT MARGIN-->
-        <div class="margin"></div>
-
-    </div>
-
-    <!--CONTENT DELIVERY NETWORK(S)-->
+    <!--CDN-->
+    <script src="https://code.jquery.com/jquery-3.0.0.js" integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo=" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-
-    <!--SCRIPT(S)-->
-    <script src="js/app.js"></script>
-    <script src="js/mainCtrl.js"></script>
-    <script src="js/mainSvc.js"></script>
-    <script src="js/paginationDir.js"></script>
-    <script src="js/map.js"></script>
-    <!--excluded initMap from the URL to call it within the mainCtrl and populate accordingly-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.1/angular-ui-router.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRX-5_flPPGgoj1N8xePuy9nGbYhbz7hI" async defer></script>
+    <!--CDN-->
+
+    <!--SCRIPT-->
+    <script src="js/app.js"></script>
+    
+    <script src="js/controllers/busiCtrl.js"></script>
+    <script src="js/controllers/foodCtrl.js"></script>
+    <script src="js/controllers/localCtrl.js"></script>
+    <script src="js/controllers/mainCtrl.js"></script>
+
+    <script src="js/services/mainSvc.js"></script>
+
+    <script src="js/directives/map.js"></script>
+    <script src="js/directives/rating.js"></script>
+    <!--SCRIPT-->
 
 </body>
 
