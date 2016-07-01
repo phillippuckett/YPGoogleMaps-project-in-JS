@@ -1,5 +1,5 @@
 {
-  "name": "sub-pages",
+  "name": "yp-googlemaps",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -16,11 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/phillippuckett88/ziphubYp.git"
+    "url": "https://github.com/phillippuckett88/ypGoogleMaps.git"
   },
   "author": "https://github.com/phillippuckett88",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/phillippuckett88/ziphubYp/issues"
+    "url": "https://github.com/phillippuckett88/ypGoogleMaps/issues"
   }
 }

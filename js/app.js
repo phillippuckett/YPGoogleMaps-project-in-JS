@@ -1,35 +1,16 @@
-// 'angularUtils.directives.dirPagination'
-var sub = angular.module('sub', ['ui.router'])
+var ypGoogleMaps = angular.module('ypGoogleMaps', ['ui.router'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
 
-            .state('home', {
-                url: '/home',
-                templateUrl: '/html/home.html',
+            .state('main', {
+                url: '/main',
+                templateUrl: '/main.html',
                 controller: 'mainCtrl'
             })
 
-            .state('food_&_restaurants', {
-                url: '/food_&_restaurants',
-                templateUrl: 'html/food.html',
-                controller: 'foodCtrl'
-            })
+        $urlRouterProvider.otherwise('/main');
 
-            .state('local', {
-                url: '/local',
-                templateUrl: 'html/local.html',
-                controller: 'localCtrl'
-            })
-
-            .state('business_to_business', {
-                url: '/business_to_business',
-                templateUrl: 'html/business.html',
-                controller: 'busiCtrl'
-            })
-
-        $urlRouterProvider.otherwise('/home');
-
-        sub.run(function ($rootScope) {
+        ypGoogleMaps.run(function ($rootScope) {
             $rootScope.$on("$stateChangeError", console.log.bind(console)); });
 
     });

@@ -1,4 +1,4 @@
-angular.module('sub')
+angular.module('ypGoogleMaps')
     .service('mainSvc', function ($http) {
         // console.log('mainSvc');
 
