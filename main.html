@@ -1,5 +1,5 @@
 <div class="header">
-    <h6 class="title">YPGM APP</h6>
+    <h6 class="title">YPGM</h6>
     <h6 class="text">Locations in {{data.searchResult.metaProperties.searchCity}}, {{data.searchResult.metaProperties.searchState}}</h6>
 </div>
 
@@ -10,8 +10,9 @@
 <!--NAV-->
 <div class="nav">
     <form method="post">
-        <input class="input" id="searchBar" type="search" ng-model="name" placeholder="Name or Keyphrase" on-keypress="getYpCtrl()">
-        <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Location" on-keypress="getYpCtrl()">
+            <input class="input" id="searchBar" type="search" ng-model="name" placeholder="Name or Keyphrase">
+            <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Location">
+        <i class="fa fa-search" aria-hidden="false" ng-click="getYpCtrl()"></i>
     </form>
 </div>
 <!--NAV-->

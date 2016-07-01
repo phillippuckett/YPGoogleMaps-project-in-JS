@@ -4,7 +4,9 @@
 html { margin: 0;padding: 0; background-color: #ECEEF0; }
 body { margin: 0;padding: 0; }
 
+/* HEADER AND HEADER TEXT*/
 .header {
+    color: white;
     background-color: midnightblue;
     margin: 0; padding: 1.25vh 0 0 0;
     height: 5vh;
@@ -13,8 +15,6 @@ body { margin: 0;padding: 0; }
 }
 
 .title {
-    /*border: 1px solid gold;*/
-    color: white;
     font-size: 3.5vh;
     font-family: 'HelveticaNeueMed';
     margin: 0 1.25vw; padding: 0;
@@ -22,41 +22,63 @@ body { margin: 0;padding: 0; }
 }
 
 .text {
-    /*border: 1px solid gold;*/
-    color: white;
-    font-size: 3.5vh;
+    font-size: 3vh;
     font-family: 'HelveticaNeue';
     text-align: right;
     margin: 0 1.25vw; padding: 0;
     width: 75%;
     }
+/* HEADER AND HEADER TEXT*/
 
-#map {  
-    background-color: gold;
-    height: 45vh;
-    width: 100%;
-}
 
+
+/* GOOGLE MAP CANVAS*/
+#map { height: 45vh; width: 100%; }
+/* GOOGLE MAP CANVAS*/
+
+
+
+/*NAVIGATION INPUTS AND SEARCH ICON*/
 .nav {
-    color: white;
     background-color: midnightblue;
-    margin: 0; padding: 0 0 0 25vw;
     height: 6.25vh;
-
+    width: 100%;
+    margin: 0; padding: 0;
 }
 
 .input {
-    border: 1px solid midnightblue;
+    border: 1px solid grey;
     border-radius: .5vh;
     color: midnightblue;
-    font-size: 3vh;
+    font-size: 4vh;
     font-family: 'HelveticaNeueLt';
-    width: 30%;
-    margin: 1.25vh .125vh; padding: 0;
+    width: 42.5%;
+    display: inline-flex; 
+    margin: 0 .25vw; padding: 0;
 }
 
+i.fa {
+    color: white;
+    border: 1px solid white;
+    border-radius: .5vh;
+    text-align: center;
+    font-size: 5.25vh;
+    width: 12.5vw;
+    margin: .25vh 0 0 0; padding: 0;
+}
+.fa-search:hover {     
+    color: yellow;
+    border: 1px solid yellow;
+    border-radius: .5vh;
+}
+
+/*NAVIGATION INPUTS AND SEARCH ICON*/
+
+
+
+/*API RESULTS*/
 .results {
-    background-color: darkgoldenrod;
+    background-color: lightgray;
     margin: 0;padding: 0;
     height: 45vh;
     overflow-y: auto;
@@ -153,3 +175,4 @@ ul.pagination li a {
     width: 100px;
     height: 100px;
 }
+/*API RESULTS*/
