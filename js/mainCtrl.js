@@ -2,8 +2,8 @@ ypGoogleMaps.controller('mainCtrl', function ($scope, mainSvc) {
     // console.log('localCtrl');
 
     // NAV //
-    $scope.name = "Business";
-    $scope.location = "";
+    $scope.name = "Pizza";
+    $scope.location = "Salt Lake City";
     $scope.distanceArray = ['84111', '84116', '84121'];
     $scope.defaultDistance = function () {
         $scope.category = $scope.distanceArray[0];
