@@ -1,0 +1,8 @@
+{
+  "name": "yp Google Maps",
+  "description": "",
+  "repository": "https://github.com/phillippuckett88/heroku/yp-google-maps",
+  "logo": "http://node-js-sample.herokuapp.com/node.svg",
+  "keywords": ["node", "express", "static"],
+  "image": "heroku/nodejs"
+}
