@@ -1,15 +1,14 @@
 ypGoogleMaps.controller('mainCtrl', function ($scope, mainSvc) {
     // console.log('localCtrl');
 
-    // NAV //
-    $scope.name = "Pizza";
+
+
+    // NAV // Placeholders being used for beta testing purposes
+    $scope.name = "Grocer";
     $scope.location = "Salt Lake City";
-    $scope.distanceArray = ['84111', '84116', '84121'];
-    $scope.defaultDistance = function () {
-        $scope.category = $scope.distanceArray[0];
-    };
-    $scope.defaultDistance();
     // NAV //
+
+
 
     // GET DATA //
     $scope.getYpCtrl = function () {
@@ -24,6 +23,22 @@ ypGoogleMaps.controller('mainCtrl', function ($scope, mainSvc) {
     };
     $scope.getYpCtrl();
     // GET DATA //
+
+
+
+    // KEY 13//
+    $scope.onKeypress = function (event) {
+        switch (event.keyCode) {
+            case 13:
+                $scope.key13 = true;
+                // console.log('KEY 13', $scope.key13);
+                $scope.getYpCtrl();
+                break;
+        }
+    };
+    //KEY 13//
+
+
 
     // FILTER //
     $scope.filterLetter = function (letter) {

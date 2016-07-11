@@ -99,10 +99,10 @@ i.fa {
 }
 
 .template {
-    /*border: 1px solid lawngreen;*/
+    /*border: 1px solid blue;*/
     background-color: #FFFFFF;
-    margin: .5vh; padding: 0;
-    height: 22.5vh;
+    margin: .5vh; padding: 2.5vh 0 0 0;
+    height: 21.25vh;
     box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
     -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,0.25);
@@ -111,7 +111,7 @@ i.fa {
 .templateInfo {
     /*border: 1px solid green;*/
     background-color: #FFFFFF;
-    margin: 1vh; padding: 0;
+    margin: 0 5vh; padding: 0;
 
 }
 
@@ -123,12 +123,12 @@ i.fa {
     margin: 0;padding: 0; 
 }
 
-a.odysseos_arrow { text-decoration: none; margin: 0;padding: 0; height: 3vh; } 
+.odysseos_arrow { text-decoration: none; margin: 0;padding: 0; height: 3vh; } 
 
 .span { 
     /*border: 1px solid blue;*/
     display: inline-flex;
-    margin:0 0 2.5vh 0; padding:0;
+    margin:0; padding:0;
 }
 
 span.stars, span.stars span {
@@ -152,18 +152,11 @@ span.stars span {
     margin: 0 2.5vw; padding: 0; 
 }
 
-h6.businessPhone {
-    color: #3C3C3C;
+h6.templateText {
+    color: rgba(0,0,0,.5);
     font-family: 'HelveticaNeueLt';
     margin:0; padding:0;
-    font-size: 3vh;
-}
-
-h6.businessAddress {
-    color: #3C3C3C;
-    font-family: 'HelveticaNeueLt';
-    margin:0; padding:0;
-    font-size: 3vh;
+    font-size: 2.5vh;
 }
 
 ul.pagination {

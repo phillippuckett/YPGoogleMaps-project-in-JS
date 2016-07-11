@@ -8,10 +8,10 @@
 <!--MAP-->
 
 <!--NAV-->
-<div class="nav">
+<div class="nav" ng-keypress="onKeypress($event)" tabindex="0">
     <form method="post">
-            <input class="input" id="searchBar" type="search" ng-model="name" placeholder="Name or Keyphrase">
-            <input class="input" id="searchBar" type="search" ng-model="location" placeholder="Location">
+            <input class="input" id="searchBar" ng-keypress="key13" type="search" ng-model="name" placeholder="Name or Keyphrase">
+            <input class="input" id="searchBar" ng-keypress="key13" type="search" ng-model="location" placeholder="Location">
         <i class="fa fa-search" aria-hidden="false" ng-click="getYpCtrl()"></i>
     </form>
 </div>
@@ -23,16 +23,17 @@
         <div ng-repeat="listing in data.searchResult.searchListings.searchListing | filter:{ 'businessName':filters.letter }">
             <div class="template">
                 <div class="templateInfo">
-                    <h6 class="businessName" class="businessName">{{listing.businessName}}
-                        <a class="odysseos_arrow" href="{{listing.websiteURL}}"><img src="media/odysseos_arrow.png"></a>
+                    <h6 class="businessName">{{listing.businessName}}
+                        <a class="odysseos_arrow" href="tel:{{listing.websiteURL}}" target="_blank"><img src="media/odysseos_arrow.png"></a>
                     </h6>
                     <div class="span">
                         <span class="stars" title="{value as listing.averageRating}" style="width={value/5*100}%;"></span>
                         <h6 class="ratingCount">( {{listing.ratingCount}} )</h6>
                     </div>
-                    <h6 class="businessPhone"> <img src="media/phone_icon.png" style="display:inline-block;"> {{listing.phone}}</h6>
-                    <h6 class="businessAddress"><img src="media/location_icon.png" style="display:inline-block;"> {{listing.street}}, {{listing.city}}
-                        {{listing.state}} {{listing.zip}}</h6>
+                    <h6 class="templateText">{{listing.phone}}</h6>
+                    <!--Add <a href="1-{{listing.phone}}></a>" when possible, with a formatting function-->
+                    <h6 class="templateText">{{listing.street}}, {{listing.city}} {{listing.state}} {{listing.zip}}</h6>
+                    <h6 class="templateText">{{listing.openHours}}</h6>
                 </div>
             </div>
         </div>

@@ -6,7 +6,7 @@ var initMap = function () {
 
     // DEFAULT LOCATION //
     var map = new google.maps.Map(mapDiv, {
-        center: { lat: 36.1699, lng: -115.1398 },
+        center: { lat: 0, lng: 0 },
         zoom: 10
     });
 
@@ -24,22 +24,32 @@ var initMap = function () {
     map.setCenter(latLng);
 
     // INFO WINDOW //
-    var infoWindow = [];
-    
-    var infoWindowContent =
-        '<div class"infoWindow">' +
-        '<h3>Business Information</h3>' +
-        '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt rem nam suscipit eveniet ad quod non dolorum sed nemo enim molestias magni, illum tenetur unde debitis expedita, quaerat aperiam perferendis.</p>' +
-        '</div>';
+    // var content = businessName;
+    // var infowindow = new google.maps.InfoWindow();
 
-    
-    new google.maps.InfoWindow({
-        content: infoWindowContent
-    });
+    // google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+    //     return function () {
+    //         infowindow.setContent(content);
+    //         infowindow.open(map, marker);
+    // };
+    // })(marker, content, infowindow));
+
+    ////////////////////////////////////////////////////////////
+
+    // var infoWindow = [];
+
+    // var infoWindowContent =
+    // '<div class"infoWindow">' +
+    // '<h3>Business Information</h3>' +
+    //'<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt rem nam suscipit eveniet ad quod non dolorum sed nemo enim molestias magni, illum tenetur unde debitis expedita, quaerat aperiam perferendis.</p>' +
+    // '</div>';
+
+    // new google.maps.InfoWindow({
+    // content: infoWindowContent
+    // });
 
     // Display info window when the marker is clicked //
-    google.maps.event.addListener(marker, 'click', function () {
-        infoWindow.open(map, marker);
-    });
-
+    // google.maps.event.addListener(marker, 'click', function () {
+    // infoWindow.open(map, marker);
+    // });
 };
